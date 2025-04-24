@@ -1,13 +1,22 @@
 ﻿using System;
 using UnityEngine;
-public class Balizas : MonoBehaviour
+public class Balizas : Simulator
 {
+    [SerializeField] private Creadores creadores;
     [SerializeField] private KeyCode teclaActivarBaliza = KeyCode.B;
     [SerializeField] private float tiempoParpadeo = 1f;
     public bool BalizaActiva => balizaActiva;
     private bool balizaActiva = false;
     private bool estadoLuz = false;
     private float timer = 0f;
+    void Start()
+    {
+        AsignarCreador(creadores);
+    }
+    public override void AsignarCreador(Creadores creador)
+    {
+        CreadoresSimulator = creador; 
+    }
     void Update()
     {
         if (Input.GetKeyDown(teclaActivarBaliza) && PuedeActivarse())
