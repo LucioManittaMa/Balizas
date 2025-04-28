@@ -19,7 +19,7 @@ public class Balizas : Simulator
     }
     void Update()
     {
-        if (Input.GetKeyDown(teclaActivarBaliza) && PuedeActivarse())
+        if (Input.GetKeyDown(teclaActivarBaliza))
         {
             balizaActiva = !balizaActiva;
 
