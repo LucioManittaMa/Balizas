@@ -45,7 +45,7 @@ public class Balizas : Simulator
             }
         }
     }
-    private bool PuedeActivarse()
+    public bool PuedeActivarse()
     {
         if (!balizaActiva)
         {
